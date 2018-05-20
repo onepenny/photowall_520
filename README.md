@@ -34,3 +34,4 @@ python3 index.py 1 40  (不含tip.png, 照片数40)
 
 # Todo
 [ ] 动态读取images images2/下照片数目
+[ ] 根据入参自动修改妹子名字矩阵picMatrix
