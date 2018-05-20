@@ -13,7 +13,7 @@ pip3 install pillow
 
 # Use
 1. images/文件夹下放制作照片墙的图片 并保证10张及以上, 请提前命名`[照片序号].png`, 从0开始计数, 如`9.png`, 
-2. images2/文件夹下放文字图片 并命名为`tip.png`, 如不需要文字图片请手动注释代码`# 底部加文字图片`
+2. images2/文件夹下放文字图片 并命名为`tip.png`
 3. 修改index.py中L18中妹子名字矩阵picMatrix 
 4. 命令行写法
 ```sh
