@@ -1,5 +1,7 @@
 # 520表白神器_python照片墙制作工具
 
+![最终生成的图片](https://github.com/onepenny/photowall_520/raw/master/she.png)
+
 # Prepare
 python3环境
 
@@ -7,10 +9,12 @@ python3环境
 ```shell
 pip3 install pillow
 ```
+
 # Use
 1.images/文件夹下放制作照片墙的图片 并保证10张及以上, 请提前命名`[照片序号].png`, 从0开始计数, 如`9.png`, 
 2.images2/文件夹下放文字图片 并命名为`tip.png`, 如不需要文字图片请手动注释代码`# 底部加文字图片`
-3.命令行写法
+3.修改index.py中L18中妹子名字矩阵picMatrix 
+4.命令行写法
 ```sh
 py3 index.py [noTipImage_不使用iamges2/下tip.png] [imgCount_images/下照片数目]
 ```
@@ -22,8 +26,7 @@ python3 index.py 1     (不含tip.png, 照片数10)
 python3 index.py 1 40  (不含tip.png, 照片数40)
 
 ```
-4.copy she.png 给妹子 ~
-
+5.copy she.png 给妹子 ~
 
 # Problems
 [ ] imgCount大于实际images/下数目时部分图片不展示
