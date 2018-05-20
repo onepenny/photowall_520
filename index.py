@@ -1,5 +1,5 @@
 from PIL import Image
-import os, sys
+import sys
 
 picMatrix = [
     [0, 0,0,0,0,0, 0,0, 0,0,0,0,0, 0,0, 0,0,0,0,0, 0],
@@ -26,14 +26,11 @@ picMatrix = [
 w = len(picMatrix[0])
 h = len(picMatrix)
 
-
 mw = 100
-ms = 20
-
 
 toImage = Image.new('RGBA', (100 * w, 100 * (h + 1)))
 
-def save_photo_wall(imgCount):
+def save_photo_wall(noTipImage, imgCount):
     imgIndex = 0
     needImgNum = 0
     for y in range(h):
@@ -49,18 +46,28 @@ def save_photo_wall(imgCount):
                     pass
             except IOError:
                 pass
-    tipImage = Image.open(r"./images2/tip.png")
-    tipImage.resize((100 * (w - 2), 100), Image.ANTIALIAS)
-    print(x, y)
-    toImage.paste(tipImage, (100, int((y + 0.7) * mw)))
 
-    print('不重复需要照片数: %s' % needImgNum)
+    # 底部加文字图片
+    if not noTipImage:
+        tipImage = Image.open(r"./images2/tip.png")
+        tipImage.resize((100 * (w - 2), 100), Image.ANTIALIAS)
+        toImage.paste(tipImage, (100, int((y + 0.7) * mw)))
+
+    print('img_count needed for no-repeat-img-fragment: %s' % needImgNum)
 
     toImage.show()
 
     # todo sr
-    # toImage.save('ta.jpg')
+    toImage.save('she.png')
 
 if __name__ == '__main__':
-    save_photo_wall(40)
+    imgCount = 10
+    lenArgv = len(sys.argv)
+    noTipImage = False
+    if lenArgv > 1:
+        noTipImage = bool(int(sys.argv[1]))
+    if lenArgv > 2:
+        imgCount = int(sys.argv[2])
+
+    save_photo_wall(noTipImage, imgCount)
 
