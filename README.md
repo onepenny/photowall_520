@@ -1,5 +1,6 @@
 # 520表白神器_python照片墙制作工具
 
+最终生成如下图片
 ![最终生成的图片](https://github.com/onepenny/photowall_520/raw/master/she.png)
 
 # Prepare
